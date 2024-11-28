@@ -7,21 +7,21 @@
     <title>CitiVerify</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/Orbit_2024_Hackathon/assets /style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- Navbar -->
 <nav>
-    <div class="navbar container">
+    <div class="navbar container" >
         <div class="logo">
-            <img src="/Orbit_2024_Hackathon/image/logo.png">
+            <img src="/image/logo.png">
         </div>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="#hero">Home</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#faq">FAQ</a></li>
-            <li><a href="#services">services</a></li>
+            <li><a href="#our-services">services</a></li>
             <li><a href="#privacy-policy">Privacy</a></li>
             <li><a href="#contact">Contact us</a></li>
         </ul>
@@ -44,9 +44,38 @@
 
 
     <!-- Main Login Button -->
-    <button class="button" id="openLogin"><a href="/Orbit_2024_Hackathon/login/login/login.html" style="color: white; text-decoration: none;">Login</a>
+    <button class="button" id="openLogin">Login</button>
 
-        </a></button>
+    <!-- Full-Screen Login Interface -->
+    <div id="loginInterface">
+        <button class="close-button" id="closeLogin">X</button>
+
+        <div id="loginOptions">
+            <h2>Login as:</h2>
+            <button class="button" id="userLogin">User</button>
+            <button class="button" id="orgLogin">Organization</button>
+        </div>
+
+        <div id="userForm" class="hidden form-container">
+            <h3>User Login</h3>
+            <input type="text" id="citizenship" placeholder="Citizenship Number">
+            <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}">
+            <div class="button-container">
+                <button class="button" onclick="submitLogin('user')">Submit</button>
+                <button class="back-button" id="backButtonUser">Back</button>
+            </div>
+        </div>
+
+        <div id="orgForm" class="hidden form-container">
+            <h3>Organization Login</h3>
+            <input type="text" id="pan" placeholder="PAN Number">
+            <input type="tel" id="orgPhone" placeholder="Phone Number" pattern="[0-9]{10}">
+            <div class="button-container">
+                <button class="button" onclick="submitLogin('organization')">Submit</button>
+                <button class="back-button" id="backButtonOrg">Back</button>
+            </div>
+        </div>
+    </div>
 </nav>
 
 <!-- Hero Section -->
@@ -56,12 +85,17 @@
         <div style="flex: 1;">
             <h1>Welcome to CitiVerify </h1>
             <p>Ensure the authenticity of citizenship numbers with our secure and automated verification platform. Designed to detect fraudulent documents, our system fosters trust in government-issued records while streamlining the verification process for organizations like hotels and businesses.</p>
+            <div class="button-container">
+               <a href="check_status.html"><button> Check Status</button></a>
+              </div>
+       
         </div>
         <!-- Image Section -->
         <div style="flex: 1; text-align: right;">
             <img src="/image/hero-image.png" alt="Verification Process" style="max-width: 100%; border-radius: 12px;">
         </div>
     </div>
+   
 </section>
 
 <section id="our-services">
@@ -241,20 +275,21 @@
 </section>
 
 
+
 <!-- Footer -->
 <footer>
     <div class="footer-container">
         <!-- Left: Company Logo -->
         <div class="footer-logo">
-            <img src="/image/logo.png" alt="CheckMate Logo">
+        <img src="/image/logo.png"  
         </div>
 
         <!-- Middle: Navigation Links -->
         <div class="footer-nav">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a href="#hero">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="#our-services">Services</a>
+            <a href="#contact">Contact Us</a>
         </div>
 
         <!-- Right: Contact Information -->
@@ -270,6 +305,6 @@
 </footer>
 
 
-<script src="/assets /one.js"></script>
+<script src="one.js"></script>
 </body>
 </html>

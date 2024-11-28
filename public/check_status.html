@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Upload Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Reset styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* General body styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container styling */
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      width: 450px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+
+    /* File input section */
+    .upload-section {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .upload-section label {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .upload-section input[type="file"] {
+      display: none; /* Hide the default input */
+    }
+
+    .upload-section button {
+      display: inline-block;
+      background-color: #007BFF;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-section button:hover {
+      background-color: #0056b3;
+    }
+
+    .file-preview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .file-preview img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 10px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Unique Document Number section */
+    .input-section {
+      margin-top: 20px;
+    }
+
+    .input-section label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-section input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .input-section input[type="text"]:focus {
+      border-color: #007BFF;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      outline: none;
+    }
+
+    /* Button styling */
+    button#checkButton {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button#checkButton:hover {
+      background-color: #0056b3;
+    }
+
+    /* Output message */
+    #outputMessage {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Document Upload Portal</h1>
+    <form id="uploadForm">
+      <!-- File upload sections -->
+      <div class="upload-section">
+        <label for="citizenship">Citizenship</label>
+        <button type="button" onclick="triggerFileInput('citizenship')">Upload</button>
+        <input type="file" id="citizenship" accept="image/*" onchange="previewFile('citizenship', 'citizenshipPreview')">
+      </div>
+      <div class="file-preview" id="citizenshipPreview"></div>
+
+      <div class="upload-section">
+        <label for="drivingLicense">Driving License</label>
+        <button type="button" onclick="triggerFileInput('drivingLicense')">Upload</button>
+        <input type="file" id="drivingLicense" accept="image/*" onchange="previewFile('drivingLicense', 'drivingLicensePreview')">
+      </div>
+      <div class="file-preview" id="drivingLicensePreview"></div>
+
+      <div class="upload-section">
+        <label for="birthCertificate">Birth Certificate</label>
+        <button type="button" onclick="triggerFileInput('birthCertificate')">Upload</button>
+        <input type="file" id="birthCertificate" accept="image/*" onchange="previewFile('birthCertificate', 'birthCertificatePreview')">
+      </div>
+      <div class="file-preview" id="birthCertificatePreview"></div>
+
+      <div class="upload-section">
+        <label for="idCard">ID Card</label>
+        <button type="button" onclick="triggerFileInput('idCard')">Upload</button>
+        <input type="file" id="idCard" accept="image/*" onchange="previewFile('idCard', 'idCardPreview')">
+      </div>
+      <div class="file-preview" id="idCardPreview"></div>
+
+      <!-- Document Number Input -->
+      <div class="input-section">
+        <label for="docNumber">Unique Document Number</label>
+        <input type="text" id="docNumber" placeholder="Enter Document Number">
+      </div>
+
+      <!-- Submit Button -->
+      <button type="button" id="checkButton">Check</button>
+    </form>
+    <p id="outputMessage"></p>
+  </div>
+
+  <script>
+    // Trigger the hidden file input when clicking the button
+    function triggerFileInput(id) {
+      document.getElementById(id).click();
+    }
+
+    // Preview the uploaded file
+    function previewFile(inputId, previewId) {
+      const fileInput = document.getElementById(inputId);
+      const previewContainer = document.getElementById(previewId);
+      previewContainer.innerHTML = ''; // Clear existing preview
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          previewContainer.appendChild(img);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+      }
+    }
+
+    // Handle the "Check" button
+    document.getElementById('checkButton').addEventListener('click', () => {
+      const docNumber = document.getElementById('docNumber').value.trim();
+      const messageElement = document.getElementById('outputMessage');
+      if (!docNumber) {
+        messageElement.textContent = "Please enter a valid document number.";
+        messageElement.style.color = "red";
+      } else {
+        messageElement.textContent = `Document number ${docNumber} has been submitted successfully.`;
+        messageElement.style.color = "green";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -102,7 +102,51 @@ nav ul li a:hover {
 #hero button:hover {
     background-color: #ff9900;
 }
-
+/* check status */
+.check-status-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: white;
+    border: none;
+  }
+  #hero button{
+    background:rebeccapurple;
+    border-radius: 50px;
+    margin-top: 50px;
+  }
+  
+  .check-status-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+  }
+  
+  .check-status-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .check-status-button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+  }
+  
+  .check-status-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 /* Forms */
 section {
     padding: 60px 20px;
