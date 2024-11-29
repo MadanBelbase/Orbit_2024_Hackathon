@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+            color: #555;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+        #user-fields, #org-fields {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="login.php" method="POST">
+            <!-- Select Login Type (User/Organization) -->
+            <div class="form-group">
+                <label for="type">Login as:</label>
+                <select name="type" id="type" required onchange="toggleFields()">
+                    <option value="user">User</option>
+                    <option value="organization">Organization</option>
+                </select>
+            </div>
+            
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" name="phone" id="phone" required placeholder="Enter your phone number">
+            </div>
+            
+            <!-- User-specific fields (Citizenship) -->
+            <div id="user-fields" class="form-group">
+                <label for="citizenship">Citizenship No:</label>
+                <input type="text" name="citizenship" id="citizenship" placeholder="Enter your citizenship number">
+            </div>
+            
+            <!-- Organization-specific fields (PAN) -->
+            <div id="org-fields" class="form-group" style="display: none;">
+                <label for="pan">PAN No:</label>
+                <input type="text" name="pan" id="pan" placeholder="Enter your PAN number">
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" name="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to toggle fields based on user selection (user/organization)
+        function toggleFields() {
+            var type = document.getElementById('type').value;
+            if (type === 'user') {
+                document.getElementById('user-fields').style.display = 'block';
+                document.getElementById('org-fields').style.display = 'none';
+            } else {
+                document.getElementById('user-fields').style.display = 'none';
+                document.getElementById('org-fields').style.display = 'block';
+            }
+        }
+        // Initial call to set the default visibility of the fields
+        toggleFields();
+    </script>
+
+</body>
+</html>
