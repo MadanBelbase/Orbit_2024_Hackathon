@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     color: #333;
     display: grid;
     justify-content: center;
+   
 }
 
 /* Container for aligning the content */
