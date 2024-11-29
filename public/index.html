@@ -83,7 +83,12 @@
     <div class="container" style="display: flex; align-items: center; gap: 2rem;">
         <!-- Text Content -->
         <div style="flex: 1;">
-            <h1>Welcome to CitiVerify </h1>
+            <h1 id="citi">Welcome to CitiVerify </h1>
+            <style>
+                h1#citi{
+                    margin-top: 50px;
+                }
+            </style>
             <p>Ensure the authenticity of citizenship numbers with our secure and automated verification platform. Designed to detect fraudulent documents, our system fosters trust in government-issued records while streamlining the verification process for organizations like hotels and businesses.</p>
             <div class="button-container">
                <a href="check_status.html"><button> Check Status</button></a>
@@ -128,48 +133,59 @@
 
 
 <!-- How It Works Section -->
-<section id="how-it-works">
+
+
+<section id="our-services">
     <div class="container">
-        <h2>How It Works</h2>
-
-        <!-- Step 1 -->
-        <div class="step">
-            <h3>Step 1: Enter Your Contact Number</h3>
-            <p>Provide your contact number to receive a One-Time Password (OTP) that ensures the security of your verification process.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="step">
-            <h3>Step 2: Verify Your OTP</h3>
-            <p>After receiving the OTP, enter it into the system to confirm your identity and gain access to the verification platform.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="step">
-            <h3>Step 3: Upload Your Documents</h3>
-            <p>Upload your documents, such as your citizenship certificate, for real-time verification against the government database.</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="step">
-            <h3>Step 4: Document Verification</h3>
-            <p>Our system automatically checks your documents against a secure backend database to verify their authenticity.</p>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="step">
-            <h3>Step 5: Get Your Results</h3>
-            <p>Once verified, you'll receive the status of your document's authenticity, ensuring you can trust the results for all your needs.</p>
-        </div>
-
-        <!-- Step 6 -->
-        <div class="step">
-            <h3>Step 6: Download Your Verified Documents</h3>
-            <p>If your documents are verified successfully, you can download the verified copy for your records or to share with other parties.</p>
-        </div>
-
+        <h2>How it works</h2>
+        <div class="services-grid">
+            <div class="service">
+                <img src="number.jpg" alt="Enter Contact Number" class="step-image">
+                <h3>1. Enter Contact Number</h3>
+                <p>Enter your Contact Number</p>
+            </div>
+            <div class="service">
+                <img src="otp.png" alt="OTP Verification Icon" class="step-image">
+                <h3>2.OTP Verification</h3>
+                <p>Mobile Number verification through OTP.</p>
+            </div>
+            <div class="service">
+                <img src="upload-docs-icon.png" alt="Upload Documents Icon" class="step-image">
+            <h3>Upload Your Documents</h3>
+            <p>Securely upload required documents for verification.</p>
+            </div>
+            <div class="service">
+                <img src="citizen-icon.png" alt="Check Status" class="step-image">
+            <h3>Check Status</h3>
+            <p>Citizen must verify their identity to link them to CitiVerify.</p>
+            </div>
+            <div class="service">
+                <img src="result.png" alt="Gets Results" class="step-image">
+            <h3>Get Results</h3>
+            <p>Shows the result as verified or not.</p>
+            </div>
+            <div class="service">
+                    <img src="downloads.jpg.png" alt="Download Verified Document" class="step-image">
+                    <h3>Download Verified Document</h3>
+                    <p>Download the verified document.</p>
+            </div>
+            <div class="service">
+                <img src="Track.png" alt="Track Me " class="step-image">
+                <h3>Track Me</h3>
+                <p>Tracks the checked-in location of the user</p>
+            </div>
+            <div class="service">
+                    <img src="enjoyy.png" alt="Enjoy App Icon" class="step-image">
+                    <h3>Enjoy App</h3>
+                    <p>Enjoy government services in a single app.</p>
+                </div>
+                
     </div>
 </section>
+
+
+
+
 
 
 <section id="privacy-policy">
@@ -241,6 +257,7 @@
             <h3>What should I do if I encounter an issue with the platform?</h3>
             <p>If you encounter any issues, please contact our support team through the 'Contact Us' section, and we'll assist you promptly.</p>
         </div>
+       
     </div>
 </section>
 
@@ -273,38 +290,189 @@
         </form>
     </div>
 </section>
+<section>
+    <h3 id="bott">CHAT WITH US</h3>
+    <div class="box">
+        <div>
+        
+            <a href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/11/28/07/20241128070652-JN2HCR7N.json" id="chatt">Ask About Us....</a>
+           </div>
+      </div>
+    <style>
+        .box {
+          width: 200px;
+          height: 150px;
+          border: 2px solid black; /* Box border */
+          padding: 20px; /* Space inside the box */
+          background-color: rgb(50, 66, 72); /* Box background */
+          box-sizing: border-box; /* Includes padding and border in the element's total size */
+          margin: 20px; /* Space outside the box */
+          width: 1000px;
+          height:50px ;
+          border-radius: 30px;
+          margin-left: 100px;
+        }
 
+        #chatt{
+            text-decoration: none;
+            margin-top: 13px;
+            color:white;
+        }
+
+        a #chatt{
+            margin-top: 13px;
+        }
+        h3#bott{
+            margin-left: 500px;
+        }
+      </style>
+</section>
+
+
+
+    
+    <div>
+        <!-- Chatbot Icon with message box -->
+        <a href="#" class="chatbot-icon" onclick="openChatbot()">
+          <div class="chatbot-message-box">
+            <span>Ask about us...</span>
+          </div>
+          <img src="/image/bot.png" alt="Chatbot Icon">
+        </a>
+      </div>
+    
+      <!-- Chatbot container that will be shown when clicked -->
+      <div id="chatbot-container" style="display: none;">
+        <div id="chatbot-header">
+          <button id="close-chatbot" onclick="closeChatbot()">Back</button>
+        </div>
+        <!-- Chatbot Iframe -->
+        <iframe id="chatbot-iframe" src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/11/28/07/20241128070652-JN2HCR7N.json" 
+                style="width: 400px; height: 600px; border: none;">
+        </iframe>
+      </div>
+    
+      <style>
+        /* Chatbot icon styles */
+        .chatbot-icon {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #007bff;
+          padding: 10px;
+          border-radius: 50%;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          z-index: 1000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+    
+        .chatbot-icon img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+    
+        /* Chatbot message box styles */
+        .chatbot-message-box {
+          position: absolute;
+          top: -35px;
+          background-color: #fff;
+          padding: 10px 15px;
+          border-radius: 5px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          font-size: 16px;
+          color: #007bff;
+          width: 150px;
+          text-align: center;
+          font-weight: bold;
+          display: block; 
+          margin-left: -70px;/* Always visible */
+          margin-top: -10px;
+        }
+    
+        .chatbot-icon:hover .chatbot-message-box {
+          display: block; /* Ensure message box is visible all the time */
+        }
+    
+        .chatbot-icon:hover {
+          background-color: #0056b3;
+          transform: scale(1.1);
+        }
+    
+        /* Chatbot container styles */
+        #chatbot-container {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          display: none; /* Hidden by default */
+          z-index: 1000;
+        }
+    
+        #chatbot-header {
+          text-align: right;
+        }
+    
+        #close-chatbot {
+          background-color: #f44336;
+          color: #fff;
+          border: none;
+          padding: 5px 10px;
+          cursor: pointer;
+          border-radius: 5px;
+          font-size: 14px;
+        }
+    
+        #close-chatbot:hover {
+          background-color: #d32f2f;
+        }
+    
+        /* Hide content when chatbot is opened */
+        #content {
+          transition: opacity 0.5s ease;
+        }
+    
+        /* Styles to hide content when chatbot is active */
+        .hide-content #content {
+          opacity: 0;
+          pointer-events: none;
+        }
+      </style>
+    
+      <script>
+        function openChatbot() {
+          // Hide main content and show the chatbot container
+          document.body.classList.add('hide-content');
+          document.getElementById('chatbot-container').style.display = 'block';
+        }
+    
+        function closeChatbot() {
+          // Hide the chatbot and show main content again
+          document.body.classList.remove('hide-content');
+          document.getElementById('chatbot-container').style.display = 'none';
+        }
+      </script>
 
 
 <!-- Footer -->
 <footer>
-    <div class="footer-container">
-        <!-- Left: Company Logo -->
-        <div class="footer-logo">
-        <img src="/image/logo.png"  
-        </div>
-
-        <!-- Middle: Navigation Links -->
-        <div class="footer-nav">
-            <a href="#hero">Home</a>
-            <a href="aboutus.html">About Us</a>
-            <a href="#our-services">Services</a>
-            <a href="#contact">Contact Us</a>
-        </div>
-
-        <!-- Right: Contact Information -->
-        <div class="footer-contact">
-            <p><strong>Contact Us</strong></p>
-            <p>Email: <a href="mailto:support@checkmate.com">support@checkmate.com</a></p>
-            <p>Address: 1234 Street, Kathmandu, Nepal</p>
-            <p>Phone: +977 123 456 789</p>
-        </div>
+     <!-- Right: Contact Information -->
+     <div class="footer-contact">
+        <p><strong>Contact Us</strong></p>
+        <a href="mailto:izzuser12@gmail.com">Email :izzuser12@gmail.com</a>
+        <p>Address: 1234 Street, Kathmandu, Nepal</p>
+        <p>Phone: +977 123 456 789</p>
     </div>
+</div>
 
-    <p>&copy; 2024 CheckMate. All Rights Reserved.</p>
+<p>&copy; 2024 CheckMate. All Rights Reserved.</p>
 </footer>
-
-
-<script src="one.js"></script>
-</body>
-</html>
+    

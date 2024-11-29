@@ -230,10 +230,10 @@ button:hover {
 }
 
 
-
+/* how to works */
 #how-it-works {
     padding: 40px 0;
-    background-color: #f9f9f9;
+    background-color: #a52525;
     text-align: center;
 }
 
@@ -271,7 +271,6 @@ button:hover {
         margin: 15px 0;
     }
 }
-
 /* Privacy Policy Section */
 #privacy-policy {
     padding: 60px 20px;
@@ -318,6 +317,9 @@ button:hover {
 .privacy-point p {
     font-size: 1rem;
     color: #333;
+}
+p{
+    margin-top: 30px;
 }
 
 /* Responsive Design */
