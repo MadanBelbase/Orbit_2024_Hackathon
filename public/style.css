@@ -315,7 +315,11 @@ button:hover {
     font-size: 1.8rem;
     color: #007bff;
     margin-bottom: 10px;
+<<<<<<< HEAD
     margin-left: 40px;
+=======
+    margin-left: 35px;
+>>>>>>> c148a33f7b31808b0586a9accf75b31e888e2afc
 }
 
 .privacy-point p {
