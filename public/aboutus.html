@@ -26,6 +26,22 @@
       line-height: 1.6;
       margin-bottom: 30px;
     }
+    .back-button {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #fff;
+      background-color: #2e4053;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .back-button:hover {
+      background-color: #1c2833;
+    }
     .team-container {
       display: flex;
       flex-wrap: wrap;
@@ -97,6 +113,8 @@
   </style>
 </head>
 <body>
+  <a href="index.html" class="back-button">Back to Home</a>
+  
   <div class="about-section">
     <h1>About Us</h1>
     <p>
@@ -148,11 +166,5 @@
     </div>
     <a href="learnmore.html"><button class="toggle-button"> Learn More</button></a>
   </div>
-
-  <script>
-    function toggleContent() {
-      alert("We manage our website using state-of-the-art cloud infrastructure, periodic audits, and a dedicated DevOps team to ensure efficiency and scalability.");
-    }
-  </script>
 </body>
 </html>

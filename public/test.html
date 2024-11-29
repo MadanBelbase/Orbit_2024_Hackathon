@@ -3,140 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chatbot Icon</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <div>
-    <!-- Chatbot Icon with message box -->
-    <a href="#" class="chatbot-icon" onclick="openChatbot()">
-      <div class="chatbot-message-box">
-        <span>Ask about us...</span>
-      </div>
-      <img src="/image/bot.png" alt="Chatbot Icon">
-    </a>
-  </div>
-
-  <!-- Chatbot container that will be shown when clicked -->
-  <div id="chatbot-container" style="display: none;">
-    <div id="chatbot-header">
-      <button id="close-chatbot" onclick="closeChatbot()">Back</button>
-    </div>
-    <!-- Chatbot Iframe -->
-    <iframe id="chatbot-iframe" src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/11/28/07/20241128070652-JN2HCR7N.json" 
-            style="width: 400px; height: 600px; border: none;">
-    </iframe>
-  </div>
-
+  <title>About Us</title>
   <style>
-    /* Chatbot icon styles */
-    .chatbot-icon {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #007bff;
-      padding: 10px;
-      border-radius: 50%;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
     }
-
-    .chatbot-icon img {
-      width: 50px;
-      height: 50px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    /* Chatbot message box styles */
-    .chatbot-message-box {
-      position: absolute;
-      top: -35px;
-      background-color: #fff;
-      padding: 10px 15px;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      font-size: 16px;
-      color: #007bff;
-      width: 120px;
+    .about-section {
+      padding: 50px;
+      background-color: #2e4053;
+      color: #fff;
       text-align: center;
-      font-weight: bold;
-      display: block; 
-      margin-left: -70px;/* Always visible */
-      margin-top: -10px;
     }
-
-    .chatbot-icon:hover .chatbot-message-box {
-      display: block; /* Ensure message box is visible all the time */
+    .about-section h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
     }
-
-    .chatbot-icon:hover {
-      background-color: #0056b3;
-      transform: scale(1.1);
+    .about-section p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 30px;
     }
-
-    /* Chatbot container styles */
-    #chatbot-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
+    .back-button {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      color: #fff;
+      background-color: #2e4053;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .back-button:hover {
+      background-color: #1c2833;
+    }
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 20px;
       background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      display: none; /* Hidden by default */
-      z-index: 1000;
+      color: #333;
     }
-
-    #chatbot-header {
-      text-align: right;
+    .team-member {
+      width: 300px;
+      margin: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      background: #fafafa;
+      overflow: hidden;
     }
-
-    #close-chatbot {
-      background-color: #f44336;
+    .team-member img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .team-member h3 {
+      margin: 15px 0 5px;
+    }
+    .team-member p {
+      font-size: 0.9em;
+      margin: 10px;
+    }
+    .vision-section, .origin-section, .management-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #2e4053;
+    }
+    .section-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #555;
+    }
+    .toggle-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background: #2e4053;
       color: #fff;
       border: none;
-      padding: 5px 10px;
-      cursor: pointer;
       border-radius: 5px;
-      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
     }
-
-    #close-chatbot:hover {
-      background-color: #d32f2f;
+    .toggle-button:hover {
+      background: #1c2833;
     }
-
-    /* Hide content when chatbot is opened */
-    #content {
-      transition: opacity 0.5s ease;
-    }
-
-    /* Styles to hide content when chatbot is active */
-    .hide-content #content {
-      opacity: 0;
-      pointer-events: none;
+    @media (max-width: 768px) {
+      .team-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .team-member {
+        width: 90%;
+      }
     }
   </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">Back to Home</a>
+  
+  <div class="about-section">
+    <h1>About Us</h1>
+    <p>
+      We are a dedicated team leveraging cutting-edge AI/ML technology to detect fraudulent documents and enhance public trust. Our commitment to innovation and security drives us forward.
+    </p>
+  </div>
 
-  <script>
-    function openChatbot() {
-      // Hide main content and show the chatbot container
-      document.body.classList.add('hide-content');
-      document.getElementById('chatbot-container').style.display = 'block';
-    }
+  <div class="team-container">
+    <div class="team-member">
+      <img src="/image/niraj.jpg" alt="Team Member 1">
+      <h3>Niraj Bhatta</h3>
+      <p>FUll Stack Developer</p>
+    </div>
+    <div class="team-member">
+      <img src="/image/madan.jpg" alt="Team Member 2">
+      <h3>Madan Balbase</h3>
+      <p>FUll Stack Developer</p>
+    </div>
+    <div class="team-member">
+      <img src="/image/ishbarna.jpg" alt="Team Member 3">
+      <h3>Ishbarna Kafle</h3>
+      <p>Frontend Developer</p>
+    </div>
+    <div class="team-member">
+        <img src="/image/sunny.jpg" alt="Team Member 1">
+        <h3>Sunny Rauniyar</h3>
+        <p>Fontend Developer</p>
+      </div>
+  </div>
 
-    function closeChatbot() {
-      // Hide the chatbot and show main content again
-      document.body.classList.remove('hide-content');
-      document.getElementById('chatbot-container').style.display = 'none';
-    }
-  </script>
+  <div class="vision-section">
+    <h2 class="section-title">Our Vision</h2>
+    <div class="section-content">
+      To create a fraud-free ecosystem where document authentication is secure, transparent, and efficient using AI and ML.
+    </div>
+  </div>
 
+  <div class="origin-section">
+    <h2 class="section-title">Our Origin</h2>
+    <div class="section-content">
+      Founded with a mission to combat digital fraud, our team united to bridge the gap between advanced technology and public administration.
+    </div>
+  </div>
+
+  <div class="management-section">
+    <h2 class="section-title">How We Manage</h2>
+    <div class="section-content">
+      Through rigorous testing, constant updates, and user feedback, we ensure our platform remains secure and user-friendly, enabling seamless fraud detection.
+    </div>
+    <a href="learnmore.html"><button class="toggle-button"> Learn More</button></a>
+  </div>
 </body>
 </html>

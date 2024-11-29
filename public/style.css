@@ -488,7 +488,7 @@ footer {
 }
 
 .footer-nav a:hover {
-    color: white;
+    color: rgb(235, 80, 18);
 }
 
 .footer-contact p {
@@ -513,7 +513,7 @@ footer p {
 /* login  */
 
 .hidden {
-    display: none;
+display:none;
 }
 .button {
     background-color: rebeccapurple;

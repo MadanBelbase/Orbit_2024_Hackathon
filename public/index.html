@@ -20,7 +20,7 @@
         <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
             <li><a href="#our-services">services</a></li>
             <li><a href="#privacy-policy">Privacy</a></li>
             <li><a href="#contact">Contact us</a></li>
@@ -141,12 +141,12 @@
         <div class="services-grid">
             <div class="service">
                 <img src="number.jpg" alt="Enter Contact Number" class="step-image">
-                <h3>1. Enter Contact Number</h3>
+                <h3>Enter Contact Number</h3>
                 <p>Enter your Contact Number</p>
             </div>
             <div class="service">
                 <img src="otp.png" alt="OTP Verification Icon" class="step-image">
-                <h3>2.OTP Verification</h3>
+                <h3>OTP Verification</h3>
                 <p>Mobile Number verification through OTP.</p>
             </div>
             <div class="service">
@@ -214,82 +214,136 @@
 </section>
 
 <!-- FAQ Section -->
-<section id="faq">
-    <div class="container">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>What is this platform?</h3>
-            <p>This platform allows you to securely verify your documents using OTP verification.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How do I use the app?</h3>
-            <p>Simply enter your contact number, verify OTP, and upload your documents for verification.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Is my personal data safe?</h3>
-            <p>Yes, we prioritize your privacy and use strong encryption to protect your personal information.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How long does the verification process take?</h3>
-            <p>The verification process usually takes just a few minutes, depending on document type and volume.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Can I use this platform for business purposes?</h3>
-            <p>Yes, businesses such as hotels and other establishments can use this platform to verify citizenship numbers and prevent fraud.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Do I need to pay for the verification service?</h3>
-            <p>Basic verification is free of charge. However, there may be additional fees for advanced features or bulk verifications.</p>
-        </div>
-        <div class="faq-item">
-            <h3>What types of documents can be verified?</h3>
-            <p>You can verify a variety of government-issued documents, such as citizenship certificates and ID cards.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Can I track the status of my verification?</h3>
-            <p>Yes, you will receive notifications and updates about the status of your document verification.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Is there a mobile app available?</h3>
-            <p>Currently, our platform is web-based, but we are planning to release a mobile app in the future.</p>
-        </div>
-        <div class="faq-item">
-            <h3>What should I do if I encounter an issue with the platform?</h3>
-            <p>If you encounter any issues, please contact our support team through the 'Contact Us' section, and we'll assist you promptly.</p>
-        </div>
-       
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <h3>What is the purpose of this system?</h3>
+        <p>This system is designed to verify the authenticity of documents submitted to government authorities and identify fraudulent activities.</p>
     </div>
+
+    <div class="faq-item">
+        <h3>Who can use this verification system?</h3>
+        <p>The system is intended for use by government departments, authorized personnel, and individuals submitting documents for verification.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What types of documents can be verified?</h3>
+        <p>The system supports verification of various document types, including identity cards, certificates, licenses, and more.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How does the verification process work?</h3>
+        <p>The submitted document is scanned and cross-checked against a secured database using advanced fraud detection algorithms.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Is my data secure?</h3>
+        <p>Yes, the system uses end-to-end encryption and complies with government data protection regulations to ensure the security and privacy of your information.</p>
+    </div>
+
+
+<script>
+    // JavaScript to toggle the FAQ answers
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('open');
+        });
+    });
+</script>
+
+<style>
+  /* General FAQ Section Styling */
+.faq-section {
+max-width: 900px;
+margin: 40px auto;
+padding: 30px;
+background: linear-gradient(145deg, #ffffff, #f1f1f1);
+border-radius: 15px;
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+font-family: 'Roboto', sans-serif;
+color: #333;
+}
+
+/* Section Title Styling */
+.faq-section h2 {
+text-align: center;
+font-size: 28px;
+color: #0048a3;
+text-transform: uppercase;
+margin-bottom: 30px;
+border-bottom: 2px solid #0048a3;
+display: inline-block;
+padding-bottom: 5px;
+}
+
+/* Individual FAQ Item */
+.faq-item {
+margin-bottom: 20px;
+padding: 15px;
+background-color: #ffffff;
+border-radius: 10px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item:hover {
+transform: translateY(-5px);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* FAQ Question Styling */
+.faq-item h3 {
+font-size: 20px;
+color: #0056cc;
+font-weight: bold;
+margin: 0;
+transition: color 0.3s ease;
+}
+
+.faq-item:hover h3 {
+color: #003d99;
+}
+
+/* FAQ Answer Styling */
+.faq-item p {
+font-size: 16px;
+color: #666;
+line-height: 1.6;
+margin: 10px 0 0;
+display: none; /* Initially hidden */
+border-left: 4px solid #0056cc;
+padding-left: 15px;
+}
+
+/* Show the answer when FAQ item is clicked */
+.faq-item.open p {
+display: block;
+}
+
+/* Animation for smooth content reveal */
+.faq-item p {
+animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+from {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+
+</style>
 </section>
 
 
-<section id="contact">
-    <div class="container">
-        <div class="contact-info">
-            <div class="contact-icon">
-                <i class="fas fa-phone-alt"></i> <!-- Example icon, you can choose other icons -->
-            </div>
-            <div class="contact-text">
-                <h2>Contact Us</h2>
-                <p>If you have any questions or need assistance, feel free to reach out to us. We're here to help!</p>
-            </div>
-        </div>
-        <form action="#" method="POST" class="contact-form">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-</section>
+
 <section>
     <h3 id="bott">CHAT WITH US</h3>
     <div class="box">
@@ -329,7 +383,34 @@
 </section>
 
 
-
+<section id="contact">
+    <div class="container">
+        <div class="contact-info">
+            <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i> <!-- Example icon, you can choose other icons -->
+            </div>
+            <div class="contact-text">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or need assistance, feel free to reach out to us. We're here to help!</p>
+            </div>
+        </div>
+        <form action="#" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
     
     <div>
         <!-- Chatbot Icon with message box -->
@@ -463,16 +544,43 @@
 
 
 <!-- Footer -->
+<!-- Footer -->
 <footer>
-     <!-- Right: Contact Information -->
-     <div class="footer-contact">
-        <p><strong>Contact Us</strong></p>
-        <a href="mailto:izzuser12@gmail.com">Email :izzuser12@gmail.com</a>
-        <p>Address: 1234 Street, Kathmandu, Nepal</p>
-        <p>Phone: +977 123 456 789</p>
-    </div>
-</div>
+    <div class="footer-container">
+        <!-- Left: Company Logo -->
+        <div class="footer-logo">
+            <img src="/image/logo.png" alt="CheckMate Logo" id="footer-logo">
+        </div>
 
-<p>&copy; 2024 CheckMate. All Rights Reserved.</p>
+        <!-- Middle: Navigation Links -->
+        <div class="footer-nav">
+            <a href="#hero">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="#our-services">Services</a>
+            <a href="#contact">Contact</a>
+           
+        </div>
+
+        <!-- Right: Contact Information -->
+        <div class="footer-contact">
+            <p><strong>Contact Us</strong></p>
+            <p></p>Email :citiverify@gmail.com</p>
+            <p>Address: 1234 Street, Kathmandu, Nepal</p>
+            <p>Phone: +977 123 456 789</p>
+        </div>
+    </div>
+
+    <p>&copy; 2024 CheckMate. All Rights Reserved.</p>
+    <style>
+     img#footer-logo{
+           height: 100px;
+
+        }
+    </style>
 </footer>
-    
+
+
+<script src="one.js"></script>
+</body>
+</html>
+
