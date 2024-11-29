@@ -50,6 +50,23 @@
         button:hover {
             background-color: #45a049;
         }
+        .back-btn {
+            background-color: #f1f1f1;
+            color: #555;
+            border: 1px solid #ddd;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 15px;
+            width: 100%;
+            font-size: 14px;
+        }
+        .back-btn:hover {
+            background-color: #ddd;
+        }
         .form-group {
             margin-bottom: 15px;
         }
@@ -96,6 +113,9 @@
             <!-- Submit Button -->
             <button type="submit" name="submit">Login</button>
         </form>
+        
+        <!-- Back Button (using JavaScript to go to home page) -->
+        <button class="back-btn" onclick="goBackToHome()">Go Back to Home</button>
     </div>
 
     <script>
@@ -112,6 +132,11 @@
         }
         // Initial call to set the default visibility of the fields
         toggleFields();
+
+        // JavaScript function to go back to the homepage
+        function goBackToHome() {
+            window.location.href = 'http://localhost:50/Orbit/Orbit_2024_Hackathon/public/index.html';  // Change 'index.php' to your homepage URL if it's different
+        }
     </script>
 
 </body>

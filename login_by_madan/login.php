@@ -15,10 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $result = $stmt->get_result();
 
-        // if ($result->num_rows > 0) {
-        //     // User found
-        //     echo "<h2>Welcome to User Dashboard</h2>";
-        // } 
         if ($result->num_rows > 0) {
             // Start a session to store user information
             session_start();
@@ -63,3 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 $conn->close();
 ?>
+
+<!-- Add this HTML for the back button -->
+<button onclick="window.history.back()">Go Back</button>
